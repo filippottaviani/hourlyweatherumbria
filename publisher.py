@@ -1,20 +1,13 @@
 import tweepy
 import weather
 import time
-
-# Chiavi di accesso
-bearer_token = ("AAAAAAAAAAAAAAAAAAAAAOi6uQEAAAAAp609wcEUv1tp7bDqx76mRZn4ZY8"
-                "%3DECSC9xwwPtz086trG4HFaqJWzfgYL0I8rhOgRiyc1DXuGsvq4C")
-consumer_key = "S0z7reQoU1HzlY96rK4i7j1cN"
-consumer_secret = "UJdpwZERtDGklmnEd9FiW7wbaJDjfETyF9tLhnfKrbrNMRKkCN"
-access_token = "1804183367123943424-6CChzbcrEeC5SRi1hATvkDFLZIQxQr"
-access_token_secret = "Mk7gkTxANcn9eWvkFeoZlCPSV4uyJiQn68idXO4eh1kXj"
+import keys  # file non presente su GiHub per ragioni di privacy
 
 # Ciclo orario
 while True:
     # Autorizzazione
-    client = tweepy.Client(bearer_token, consumer_key, consumer_secret, access_token, access_token_secret)
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret, access_token, access_token_secret)
+    client = tweepy.Client(keys.bearer_token, keys.consumer_key, keys.consumer_secret, keys.access_token, keys.access_token_secret)
+    auth = tweepy.OAuthHandler(keys.consumer_key, keys.consumer_secret, keys.access_token, keys.access_token_secret)
     api = tweepy.API(auth)
 
     # Test della connessione con Twitter
